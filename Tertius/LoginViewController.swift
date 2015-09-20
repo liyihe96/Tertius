@@ -52,6 +52,8 @@ class LoginViewController: UIViewController {
             } else {
                 if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                     delegate.switchRootViewController()
+                    delegate.registerNotification()
+
                 }
             }
         }
