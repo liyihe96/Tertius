@@ -81,6 +81,9 @@ extension MapViewController: CLLocationManagerDelegate {
                 ConstVar.firstShown = false
             }
             NSLog("Current Location: %@", location)
+            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                appDelegate.currentLocation = location
+            }
             User.currentUser()!.currentLocation = PFGeoPoint(location: location)
             User.currentUser()!.saveInBackground()
         }

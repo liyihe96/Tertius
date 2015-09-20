@@ -27,8 +27,8 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewDidLoad() {
-        textView.delegate = self
         super.viewDidLoad()
+        textView.delegate = self
         textView.becomeFirstResponder()
     }
     
@@ -39,10 +39,20 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func donePressed(sender: UIButton) {
         textView.endEditing(true)
-        addMessageDoneAlert()
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            UserManager.sharedInstance.createNewTreazure([(textView.text, appDelegate.currentLocation!)]) { (success: Bool, error: NSError?) -> Void in
+                if let error = error{
+                    NSLog("Error : %@", error)
+                    return
+                }
+                else {
+                    self.addMessageDoneAlert()
+                }
+            }
+        }
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
     func addMessageDoneAlert() {
         let alert = SCLAlertView(newWindow: ())
         alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.0))
