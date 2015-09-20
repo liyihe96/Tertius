@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -52,7 +52,6 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     func addTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapReceived:")
         self.view.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer.delegate = self
     }
     
     @IBAction func tapReceived(sender: UITapGestureRecognizer) {
@@ -61,10 +60,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.addTapGestureRecognizer()
     }
-    
-    
-    
-    
 }
