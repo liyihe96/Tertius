@@ -17,8 +17,9 @@
 		07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA21BAE72F600DAAE3D /* Treazure.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA61BAE72F600DAAE3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA31BAE72F600DAAE3D /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FAD1BAE859000DAAE3D /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAC1BAE859000DAAE3D /* PlaceMarker.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FB11BAE953100DAAE3D /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FB01BAE953100DAAE3D /* OverlayPresentationController.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FB31BAE967E00DAAE3D /* OverlayTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FB21BAE967E00DAAE3D /* OverlayTransitionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33061D241BAE7FBC00AC29ED /* UserManager.swift */; settings = {ASSET_TAGS = (); }; };
 		A5ECDF349F7E65AFFE02CEA2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7084F78E0BC856F65E567763 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -38,8 +39,9 @@
 		07994FA21BAE72F600DAAE3D /* Treazure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treazure.swift; sourceTree = "<group>"; };
 		07994FA31BAE72F600DAAE3D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTreazureViewController.swift; sourceTree = "<group>"; };
-		07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		07994FAC1BAE859000DAAE3D /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		07994FB01BAE953100DAAE3D /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		07994FB21BAE967E00DAAE3D /* OverlayTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitionDelegate.swift; sourceTree = "<group>"; };
 		0FEAD8A371785F4F7D9CCC6F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		33061D241BAE7FBC00AC29ED /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		454247F78073101D9F88CD47 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */,
-				07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */,
+				07994FB01BAE953100DAAE3D /* OverlayPresentationController.swift */,
+				07994FB21BAE967E00DAAE3D /* OverlayTransitionDelegate.swift */,
 			);
 			name = AddTreazure;
 			sourceTree = "<group>";
@@ -262,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */,
-				07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */,
+				07994FB11BAE953100DAAE3D /* OverlayPresentationController.swift in Sources */,
 				07994FA41BAE72F600DAAE3D /* Message.swift in Sources */,
 				33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */,
 				07994FA61BAE72F600DAAE3D /* User.swift in Sources */,
@@ -270,6 +273,7 @@
 				07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */,
 				07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */,
 				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
+				07994FB31BAE967E00DAAE3D /* OverlayTransitionDelegate.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

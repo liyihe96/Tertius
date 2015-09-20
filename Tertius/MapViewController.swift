@@ -11,7 +11,7 @@ import UIKit
 class MapViewController: UIViewController {
 
     let locationManager = CLLocationManager()
-    let customPresentAnimationController = CustomPresentAnimationController()
+    let overlayTransitionDelegate = OverlayTransitioningDelegate()
     @IBOutlet weak var mapView: GMSMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,8 @@ class MapViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PopAddTreazure" {
             let toViewController = segue.destinationViewController as UIViewController
-            toViewController.transitioningDelegate = self
+            toViewController.transitioningDelegate = overlayTransitionDelegate
+            toViewController.modalPresentationStyle = .Custom
         }
     }
 
@@ -67,12 +68,6 @@ extension MapViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
         }
     }
-}
-
-extension MapViewController: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-            return self.customPresentAnimationController
-        }
 }
 
 extension MapViewController: GMSMapViewDelegate {
