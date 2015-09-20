@@ -34,6 +34,18 @@ class MapViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UserManager.sharedInstance.getMessagesOwnedByCurrentUser { messages, error in
+            if let error = error {
+                NSLog("Error %@", error.localizedDescription)
+            }
+            for message in messages! {
+                let marker = PlaceMarker(message: message, placeType: .LeftAt)
+                marker.map = self.mapView
+            }
+        }
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
