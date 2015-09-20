@@ -8,6 +8,34 @@
 
 import UIKit
 
-class AddTreazureViewController: UIViewController {
+class AddTreazureViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet var textView: UITextView!
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.text == "Add content here!" {
+            textView.text = ""
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text == "" {
+            textView.text = "Add content here!"
+            textView.textColor = UIColor.grayColor()
+        }
+    }
+    
+    override func viewDidLoad() {
+        textView.delegate = self
+    }
+    
+    @IBAction func closePressed(sender: UIButton) {
+        textView.endEditing(true)
+    }
+    
+    @IBAction func donePressed(sender: UIButton) {
+        textView.endEditing(true)
+    }
+    
 }
