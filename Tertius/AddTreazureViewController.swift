@@ -47,17 +47,19 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     @IBAction func donePressed(sender: UIButton) {
         textView.endEditing(true)
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            UserManager.sharedInstance.createNewTreazure([(textView.text, appDelegate.currentLocation!)]) { (success: Bool, error: NSError?) -> Void in
+            UserManager.sharedInstance.createNewTreazure([(textView.text, appDelegate.currentLocation!)]) { [unowned self] Bool, error  in
                 if let error = error{
                     NSLog("Error : %@", error)
                     return
                 }
                 else {
-                    self.addMessageDoneAlert()
+                    self.dismissViewControllerAnimated(true, completion: {
+                        self.addMessageDoneAlert()
+                    })
+
                 }
             }
         }
-        dismissViewControllerAnimated(true, completion: nil)
     }
 
     func addMessageDoneAlert() {
