@@ -30,13 +30,13 @@ class LoginViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
-    func signUp(username: String, password: String){
+    func signUp(username: String, password: String) {
         let user = PFUser()
         user.username = username
         user.password = password
-        user.signUpInBackgroundWithBlock { [unowned self] succeeded, error in
+        user.signUpInBackgroundWithBlock { succeeded, error in
             if succeeded {
-                NSLog("Sign up successfully with \(user.username)");
+                NSLog("Sign up successfully with \(user.username)")
                 self.logIn(username, password: password)
             } else {
                 NSLog("An error occured with: \(error)")
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(username, password: password) {
             user, error in
             if let error = error {
-                NSLog("Error %@", error.localizedDescription);
+                NSLog("Error %@", error.localizedDescription)
             } else {
                 if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                     delegate.switchRootViewController()
