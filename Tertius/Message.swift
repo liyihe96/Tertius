@@ -8,6 +8,8 @@
 
 class Message: PFObject, PFSubclassing {
     
+    @NSManaged var user: User
+    @NSManaged var finder: User?
     @NSManaged var audio: PFFile?
     @NSManaged var text: String
     @NSManaged var location: PFGeoPoint

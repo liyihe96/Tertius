@@ -37,7 +37,7 @@ class MapViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        UserManager.sharedInstance.getMessagesForCurrentUser { messages, error in
+        UserManager.sharedInstance.getMessagesOwnedByCurrentUser { messages, error in
             if let error = error {
                 NSLog("Error %@", error.localizedDescription)
             }
