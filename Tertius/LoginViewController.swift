@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        handleKeyboard()
     }
 
     deinit {
@@ -61,13 +60,7 @@ class LoginViewController: UIViewController {
     func handleKeyboard() {
         addTapGestureRecognizer()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard:", name: "UIKeyboardWillShowNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard", name: "UIKeyboardWillHideNotification", object: nil)
-    }
-
-    func handleKeyboard(note: NSNotification) {
-//        let timeInterval = note.userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
-//        let curve = note.userInfo[UIKeyboardAnimationCurveUserInfoKey]?.integerValue
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard:", name: "UIKeyboardWillHideNotification", object: nil)
     }
     
     func addTapGestureRecognizer() {
@@ -78,5 +71,23 @@ class LoginViewController: UIViewController {
     func tapReceived(sender: UITapGestureRecognizer) {
         passwordTextField.endEditing(true)
         usernameTextField.endEditing(true)
+    }
+
+    func handleKeyboard(note: NSNotification) {
+        if let info = note.userInfo {
+            let duration = info[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
+            let curve = info[UIKeyboardAnimationCurveUserInfoKey]?.integerValue
+            let options = curve! << 16
+            if note.name == UIKeyboardWillShowNotification {
+                let kbFrame = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue
+                let kbHeight = kbFrame?.height
+                UIView.animateWithDuration(NSTimeInterval(duration!), delay: NSTimeInterval(0), options: UIViewAnimationOptions(rawValue: UInt(options)), animations: {
+                    self.view.frame = CGRectMake(0, -55, self.view.frame.width, self.view.frame.height)
+                    print(kbHeight!)
+                }, completion: nil)
+            } else {
+                self.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+            }
+        }
     }
 }
