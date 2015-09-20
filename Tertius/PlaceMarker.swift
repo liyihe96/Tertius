@@ -9,7 +9,7 @@
 import Foundation
 
 enum PlaceType{
-    case PicketUpFrom
+    case PickedUpFrom
     case LeftAt
 }
 
@@ -31,7 +31,7 @@ class PlaceMarker: GMSMarker {
         switch placeType {
         case .LeftAt:
             color = UIColor.redColor()
-        case .PicketUpFrom:
+        case .PickedUpFrom:
             color = UIColor.yellowColor()
         }
         icon = UIColor.imageWithColor(color, size: CGSize(width: 10, height: 10))

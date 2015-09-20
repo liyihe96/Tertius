@@ -12,7 +12,14 @@ class MapViewController: UIViewController {
 
     let locationManager = CLLocationManager()
     let overlayTransitionDelegate = OverlayTransitioningDelegate()
+    var timer : NSTimer?
+
     @IBOutlet weak var mapView: GMSMapView!
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Treazure"
@@ -21,8 +28,13 @@ class MapViewController: UIViewController {
         locationManager.delegate = self;
         locationManager.requestAlwaysAuthorization()
         mapView.delegate = self
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
     }
 
+    deinit {
+        timer?.invalidate()
+        timer = nil
+    }
     // Mark: - Add Treazure
     func addTreazure() {
         performSegueWithIdentifier("PopAddTreazure", sender: nil)
@@ -38,9 +50,15 @@ class MapViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        refresh()
+    }
+
+    func refresh() {
+        mapView.clear()
         UserManager.sharedInstance.getMessagesOwnedByCurrentUser { messages, error in
             if let error = error {
                 NSLog("Error %@", error.localizedDescription)
+                return
             }
             NSLog("Message: %@", messages!)
             for message in messages! {
@@ -52,10 +70,11 @@ class MapViewController: UIViewController {
         UserManager.sharedInstance.getMessagesFoundByCurrentUser { messages, error in
             if let error = error {
                 NSLog("Error %@", error.localizedDescription)
+                return
             }
             NSLog("Message: %@", messages!)
             for message in messages! {
-                let marker = PlaceMarker(message: message, placeType: .PicketUpFrom)
+                let marker = PlaceMarker(message: message, placeType: .PickedUpFrom)
                 marker.map = self.mapView
             }
         }
@@ -97,19 +116,13 @@ extension MapViewController: GMSMapViewDelegate {
 
     }
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-//        mapCenterPinImage.fadeOut(0.25)
         return false
     }
     func mapView(mapView: GMSMapView!, markerInfoContents marker: GMSMarker!) -> UIView! {
-        // 1
         let placeMarker = marker as! PlaceMarker
-
-        // 2
         if let infoView = MarkerInfoView.instanceFromNib() {
-            // 3
             infoView.nameLabel.text = placeMarker.address
             infoView.placePhoto.image = UIImage(named: "Treasure")
-            infoView.placePhoto.contentMode = .ScaleAspectFit
             return infoView
         } else {
             return nil

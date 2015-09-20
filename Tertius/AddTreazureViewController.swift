@@ -29,12 +29,10 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         textView.delegate = self
-        
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
-        doneButton.layer.cornerRadius = 10
+        doneButton.layer.cornerRadius = 5
         doneButton.layer.masksToBounds = true
         textView.becomeFirstResponder()
     }
@@ -64,6 +62,6 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
 
     func addMessageDoneAlert() {
         let alert = SCLAlertView(newWindow: ())
-        alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.0))
+        alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.3))
     }
 }

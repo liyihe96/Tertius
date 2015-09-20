@@ -20,6 +20,8 @@ class TreazureDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
         doneButton.layer.cornerRadius = 5
         doneButton.layer.masksToBounds = true
     }
@@ -41,9 +43,8 @@ class TreazureDisplayViewController: UIViewController {
                     if let error = error {
                         NSLog("Error :%@", error.localizedDescription)
                         return
-                    } else {
-                        self.treazure = object as? Treazure
                     }
+                    self.treazure = object as? Treazure
                 }
             }
         }
