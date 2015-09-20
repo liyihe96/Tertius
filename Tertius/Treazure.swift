@@ -12,7 +12,7 @@ class Treazure: PFObject, PFSubclassing {
     @NSManaged var finder: User?
     @NSManaged var messages: [Message]
     @NSManaged var numMessagesFound: Int
-    @NSManaged var startingLocation: PFGeoPoint!
+    @NSManaged var startingLocation: PFGeoPoint
     
     override class func initialize() {
         struct Static {
