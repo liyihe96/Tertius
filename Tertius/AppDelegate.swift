@@ -54,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         */
         
+        let user = User.currentUser()!
+        user.currentLocation = PFGeoPoint(latitude: 42.3, longitude: -71)
+        user.saveInBackground()
+        
         return true
     }
 
@@ -62,6 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
+        if let user = User.currentUser() {
+            installation["user"] = user;
+        }
         installation.saveInBackground()
     }
 
