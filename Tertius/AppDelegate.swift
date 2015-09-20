@@ -13,20 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let mainSceneIdentifier = "MainScene"
     let loginSceneIdentifier = "LoginScene"
     let PARSE_APPLICATION_ID = "YSspB22NSOECDDG8uzk3wKh63F1HGbgtfH24mVM0"
-    let PARSE_CLIENT_KEY = "kQ6uECV065qQS1N2F4kyLIJfTHbQQGn8GzOy1ZS4";
-    var window: UIWindow?
-
+    let PARSE_CLIENT_KEY = "kQ6uECV065qQS1N2F4kyLIJfTHbQQGn8GzOy1ZS4"
     let googleMapsAPIKey = "AIzaSyA9SCjeLQNVL6Vals-L7qhKQNYVRX8pri4"
+    
+    var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         GMSServices.provideAPIKey(googleMapsAPIKey)
         Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
         switchRootViewController()
 
-
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
+        
+        UserManager.sharedInstance.getMessagesForCurrentUser { messages, error in
+            print(messages)
+        }
+        
         return true
     }
 

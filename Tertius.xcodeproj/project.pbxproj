@@ -16,7 +16,8 @@
 		07994FA41BAE72F600DAAE3D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA11BAE72F600DAAE3D /* Message.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA21BAE72F600DAAE3D /* Treazure.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA61BAE72F600DAAE3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA31BAE72F600DAAE3D /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		CE2641762C658FF9A0B83061 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1726FF6D0D374691809F45F /* libPods.a */; };
+		33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33061D241BAE7FBC00AC29ED /* UserManager.swift */; settings = {ASSET_TAGS = (); }; };
+		39D6DEAD3442F46CED837DAA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45EC566840D134128942D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		07994FA11BAE72F600DAAE3D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		07994FA21BAE72F600DAAE3D /* Treazure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treazure.swift; sourceTree = "<group>"; };
 		07994FA31BAE72F600DAAE3D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E1726FF6D0D374691809F45F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E360C73975865242B301595D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		33061D241BAE7FBC00AC29ED /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		6957073194592EEC6E94D6EA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A45EC566840D134128942D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2641762C658FF9A0B83061 /* libPods.a in Frameworks */,
+				39D6DEAD3442F46CED837DAA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +60,21 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		064CA4A2F883B3BEA10006C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A45EC566840D134128942D8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		07994F7C1BAE5B8C00DAAE3D = {
 			isa = PBXGroup;
 			children = (
 				07994F871BAE5B8C00DAAE3D /* Tertius */,
 				07994F861BAE5B8C00DAAE3D /* Products */,
-				FBB510A008C0275DB147E0E5 /* Pods */,
-				A908B7A32821D18AE90E256E /* Frameworks */,
+				B819E4BF7BB5E2E5AB905BAA /* Pods */,
+				064CA4A2F883B3BEA10006C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,23 +125,16 @@
 				07994FA11BAE72F600DAAE3D /* Message.swift */,
 				07994FA21BAE72F600DAAE3D /* Treazure.swift */,
 				07994FA31BAE72F600DAAE3D /* User.swift */,
+				33061D241BAE7FBC00AC29ED /* UserManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		A908B7A32821D18AE90E256E /* Frameworks */ = {
+		B819E4BF7BB5E2E5AB905BAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1726FF6D0D374691809F45F /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FBB510A008C0275DB147E0E5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E360C73975865242B301595D /* Pods.debug.xcconfig */,
-				F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */,
+				77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */,
+				6957073194592EEC6E94D6EA /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -143,11 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07994F971BAE5B8C00DAAE3D /* Build configuration list for PBXNativeTarget "Tertius" */;
 			buildPhases = (
-				77FD8E48ADB1906C3DAE4190 /* Check Pods Manifest.lock */,
+				E7472664FCA47C9CD41544BD /* Check Pods Manifest.lock */,
 				07994F811BAE5B8C00DAAE3D /* Sources */,
 				07994F821BAE5B8C00DAAE3D /* Frameworks */,
 				07994F831BAE5B8C00DAAE3D /* Resources */,
-				02194565CA673DBD3B050516 /* Copy Pods Resources */,
+				28AE34E2204E39DCA89119EE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +207,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02194565CA673DBD3B050516 /* Copy Pods Resources */ = {
+		28AE34E2204E39DCA89119EE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,7 +222,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		77FD8E48ADB1906C3DAE4190 /* Check Pods Manifest.lock */ = {
+		E7472664FCA47C9CD41544BD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,6 +246,7 @@
 			files = (
 				047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */,
 				07994FA41BAE72F600DAAE3D /* Message.swift in Sources */,
+				33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */,
 				07994FA61BAE72F600DAAE3D /* User.swift in Sources */,
 				07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */,
 				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
@@ -357,10 +361,11 @@
 		};
 		07994F981BAE5B8C00DAAE3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E360C73975865242B301595D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tertius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -374,10 +379,11 @@
 		};
 		07994F991BAE5B8C00DAAE3D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6957073194592EEC6E94D6EA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tertius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
