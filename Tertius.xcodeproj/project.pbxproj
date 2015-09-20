@@ -16,6 +16,8 @@
 		07994FA41BAE72F600DAAE3D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA11BAE72F600DAAE3D /* Message.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA21BAE72F600DAAE3D /* Treazure.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA61BAE72F600DAAE3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA31BAE72F600DAAE3D /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */; settings = {ASSET_TAGS = (); }; };
 		CE2641762C658FF9A0B83061 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1726FF6D0D374691809F45F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		07994FA11BAE72F600DAAE3D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		07994FA21BAE72F600DAAE3D /* Treazure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treazure.swift; sourceTree = "<group>"; };
 		07994FA31BAE72F600DAAE3D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTreazureViewController.swift; sourceTree = "<group>"; };
+		07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		E1726FF6D0D374691809F45F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360C73975865242B301595D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		07994F871BAE5B8C00DAAE3D /* Tertius */ = {
 			isa = PBXGroup;
 			children = (
+				07994FA91BAE7D7B00DAAE3D /* AddTreazure */,
 				07994FA01BAE72F000DAAE3D /* Models */,
 				07994F9E1BAE638300DAAE3D /* Map */,
 				0475540A1BAE5EA400325AF5 /* Login */,
@@ -117,6 +122,15 @@
 				07994FA31BAE72F600DAAE3D /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		07994FA91BAE7D7B00DAAE3D /* AddTreazure */ = {
+			isa = PBXGroup;
+			children = (
+				07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */,
+				07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */,
+			);
+			name = AddTreazure;
 			sourceTree = "<group>";
 		};
 		A908B7A32821D18AE90E256E /* Frameworks */ = {
@@ -242,8 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */,
+				07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */,
 				07994FA41BAE72F600DAAE3D /* Message.swift in Sources */,
 				07994FA61BAE72F600DAAE3D /* User.swift in Sources */,
+				07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */,
 				07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */,
 				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
