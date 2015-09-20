@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047554061BAE5E1400325AF5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047554051BAE5E1400325AF5 /* LoginView.swift */; };
 		07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */; };
-		07994F8B1BAE5B8C00DAAE3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F8A1BAE5B8C00DAAE3D /* ViewController.swift */; };
 		07994F8E1BAE5B8C00DAAE3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8C1BAE5B8C00DAAE3D /* Main.storyboard */; };
 		07994F901BAE5B8C00DAAE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */; };
 		07994F931BAE5B8C00DAAE3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07994F911BAE5B8C00DAAE3D /* LaunchScreen.storyboard */; };
@@ -16,9 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047554051BAE5E1400325AF5 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tertius-Bridging-Header.h"; sourceTree = "<group>"; };
 		07994F851BAE5B8C00DAAE3D /* Tertius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tertius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07994F8A1BAE5B8C00DAAE3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07994F8D1BAE5B8C00DAAE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07994F921BAE5B8C00DAAE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0475540A1BAE5EA400325AF5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				047554051BAE5E1400325AF5 /* LoginView.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		07994F7C1BAE5B8C00DAAE3D = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +70,8 @@
 		07994F871BAE5B8C00DAAE3D /* Tertius */ = {
 			isa = PBXGroup;
 			children = (
+				0475540A1BAE5EA400325AF5 /* Login */,
 				07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */,
-				07994F8A1BAE5B8C00DAAE3D /* ViewController.swift */,
 				07994F8C1BAE5B8C00DAAE3D /* Main.storyboard */,
 				07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */,
 				07994F911BAE5B8C00DAAE3D /* LaunchScreen.storyboard */,
@@ -84,6 +93,7 @@
 			children = (
 				E360C73975865242B301595D /* Pods.debug.xcconfig */,
 				F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */,
+				047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -209,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07994F8B1BAE5B8C00DAAE3D /* ViewController.swift in Sources */,
+				047554061BAE5E1400325AF5 /* LoginView.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,10 +334,13 @@
 			baseConfigurationReference = E360C73975865242B301595D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tertius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tertius-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -336,10 +349,12 @@
 			baseConfigurationReference = F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tertius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tertius-Bridging-Header.h";
 			};
 			name = Release;
 		};
