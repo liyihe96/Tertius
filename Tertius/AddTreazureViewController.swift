@@ -28,6 +28,8 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         textView.delegate = self
+        super.viewDidLoad()
+        textView.becomeFirstResponder()
     }
     
     @IBAction func closePressed(sender: UIButton) {
