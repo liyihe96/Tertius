@@ -14,8 +14,15 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Treazure"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTreazure")
         locationManager.delegate = self;
         locationManager.requestAlwaysAuthorization()
+    }
+
+    // Mark: - Add Treazure
+    func addTreazure() {
+        
     }
 }
 
