@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTreazure")
         locationManager.delegate = self;
         locationManager.requestAlwaysAuthorization()
+        mapView.delegate = self
     }
 
     // Mark: - Add Treazure
@@ -32,6 +33,7 @@ class MapViewController: UIViewController {
             toViewController.transitioningDelegate = self
         }
     }
+
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -59,4 +61,10 @@ extension MapViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
             return self.customPresentAnimationController
         }
+}
+
+extension MapViewController: GMSMapViewDelegate {
+    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
+
+    }
 }

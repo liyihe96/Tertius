@@ -26,11 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
-        
-        UserManager.sharedInstance.getMessagesForCurrentUser { messages, error in
-            print(messages)
-        }
-        
+
         return true
     }
 
