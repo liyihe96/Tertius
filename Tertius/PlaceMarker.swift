@@ -27,7 +27,11 @@ class PlaceMarker: GMSMarker {
         case .PicketUpFrom:
             color = UIColor.yellowColor()
         }
-        icon = UIColor.imageWithColor(color, size: CGSize(width: 1, height: 1))
+        icon = UIColor.imageWithColor(color, size: CGSize(width: 10, height: 10))
+
+//        icon.layer.masksToBounds = true
+        layer.masksToBounds = true
+        layer.cornerRadius = 5
         groundAnchor = CGPoint(x: 0.5, y: 0.5)
         appearAnimation = kGMSMarkerAnimationPop
     }
@@ -38,6 +42,8 @@ extension UIColor {
         let rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
+        let path = UIBezierPath(ovalInRect: rect)
+        path.addClip()
         UIRectFill(rect)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

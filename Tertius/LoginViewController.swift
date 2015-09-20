@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet var topTitleLayout: NSLayoutConstraint!
 
     @IBAction func signUpTouched(sender: UIButton) {
         signUp(usernameTextField.text!, password: passwordTextField.text!)
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        handleKeyboard()
     }
 
     deinit {
@@ -52,6 +54,8 @@ class LoginViewController: UIViewController {
             } else {
                 if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                     delegate.switchRootViewController()
+                    delegate.registerNotification()
+
                 }
             }
         }
@@ -82,11 +86,15 @@ class LoginViewController: UIViewController {
                 let kbFrame = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue
                 let kbHeight = kbFrame?.height
                 UIView.animateWithDuration(NSTimeInterval(duration!), delay: NSTimeInterval(0), options: UIViewAnimationOptions(rawValue: UInt(options)), animations: {
-                    self.view.frame = CGRectMake(0, -55, self.view.frame.width, self.view.frame.height)
+                    self.view.frame = CGRectMake(0, -120, self.view.frame.width, self.view.frame.height)
+                    self.topTitleLayout.constant = 32
+                    self.view.layoutIfNeeded()
                     print(kbHeight!)
                 }, completion: nil)
             } else {
                 self.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+                self.topTitleLayout.constant = 108
+                self.view.layoutIfNeeded()
             }
         }
     }
