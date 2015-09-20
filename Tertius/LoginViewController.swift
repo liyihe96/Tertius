@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -20,6 +20,15 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func loginTouched(sender: UIButton) {
         logIn(usernameTextField.text!, password: passwordTextField.text!)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.handleKeyboard()
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     func signUp(username: String, password: String){
@@ -48,22 +57,38 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
     }
+
+    func handleKeyboard() {
+        addTapGestureRecognizer()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard:", name: "UIKeyboardWillShowNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard:", name: "UIKeyboardWillHideNotification", object: nil)
+    }
     
     func addTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapReceived:")
-        self.view.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer.delegate = self
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @IBAction func tapReceived(sender: UITapGestureRecognizer) {
-        self.passwordTextField.endEditing(true)
-        self.usernameTextField.endEditing(true)
+    func tapReceived(sender: UITapGestureRecognizer) {
+        passwordTextField.endEditing(true)
+        usernameTextField.endEditing(true)
     }
-    
-    override func viewDidLoad() {
-        self.addTapGestureRecognizer()
+
+    func handleKeyboard(note: NSNotification) {
+        if let info = note.userInfo {
+            let duration = info[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
+            let curve = info[UIKeyboardAnimationCurveUserInfoKey]?.integerValue
+            let options = curve! << 16
+            if note.name == UIKeyboardWillShowNotification {
+                let kbFrame = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue
+                let kbHeight = kbFrame?.height
+                UIView.animateWithDuration(NSTimeInterval(duration!), delay: NSTimeInterval(0), options: UIViewAnimationOptions(rawValue: UInt(options)), animations: {
+                    self.view.frame = CGRectMake(0, -55, self.view.frame.width, self.view.frame.height)
+                    print(kbHeight!)
+                }, completion: nil)
+            } else {
+                self.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+            }
+        }
     }
-    
-    
-    
 }
