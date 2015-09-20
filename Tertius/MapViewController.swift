@@ -41,6 +41,7 @@ class MapViewController: UIViewController {
             if let error = error {
                 NSLog("Error %@", error.localizedDescription)
             }
+            NSLog("Message: %@", messages!)
             for message in messages! {
                 let marker = PlaceMarker(message: message, placeType: .LeftAt)
                 marker.map = self.mapView
@@ -61,10 +62,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first as CLLocation? {
 
-            // 7
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 20, bearing: 0, viewingAngle: 0)
 
-            // 8
             locationManager.stopUpdatingLocation()
         }
     }
