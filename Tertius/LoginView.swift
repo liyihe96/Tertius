@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Parse
 
 class LoginView: UIViewController {
 
@@ -18,6 +17,5 @@ class LoginView: UIViewController {
         
     }
     
-    func login
     
 }

@@ -4,5 +4,3 @@ pod 'DateTools'
 pod 'JGProgressHUD'
 pod 'INTULocationManager'
 pod 'GoogleMaps'
-
-use_frameworks!
