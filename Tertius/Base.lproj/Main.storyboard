@@ -167,7 +167,7 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add content here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jyz-J8-iUz">
                                 <rect key="frame" x="0.0" y="84" width="600" height="230"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8X-aB-UOe">
@@ -242,6 +242,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5f-fh-X1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="-494"/>
+        </scene>
+        <!--Treazure Display View Controller-->
+        <scene sceneID="APZ-r3-hBg">
+            <objects>
+                <viewController id="eIp-RI-Efd" customClass="TreazureDisplayViewController" customModule="Tertius" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2a5-r8-f8d"/>
+                        <viewControllerLayoutGuide type="bottom" id="XFL-wq-0dN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fwR-AV-eFJ">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osx-S7-Tnu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You received a treazure message." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-MD-93g">
+                                        <rect key="frame" x="171" y="9" width="259" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80348432970000006" green="0.84815700019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VSq-MD-93g" firstAttribute="centerY" secondItem="osx-S7-Tnu" secondAttribute="centerY" id="1uU-OY-qBP"/>
+                                    <constraint firstAttribute="height" constant="42" id="cBM-Ig-9kh"/>
+                                    <constraint firstItem="VSq-MD-93g" firstAttribute="centerX" secondItem="osx-S7-Tnu" secondAttribute="centerX" id="lrB-X7-9Rb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-bv-hy9">
+                                <rect key="frame" x="0.0" y="42" width="600" height="42"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-F1-wRm">
+                                        <rect key="frame" x="299" y="0.0" width="2" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="LSt-Z0-xjJ"/>
+                                            <constraint firstAttribute="height" constant="42" id="aKE-wJ-9sM"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vog-hQ-Dpc">
+                                        <rect key="frame" x="512" y="6" width="80" height="33"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="FX9-lo-f2k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="receiveMessage:" destination="eIp-RI-Efd" eventType="touchUpInside" id="Zkb-Ol-fJt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93755918559999996" green="0.93755918559999996" blue="0.93755918559999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Ug7-er-ZXv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vog-hQ-Dpc" secondAttribute="trailing" constant="8" id="Z5F-tw-fxK"/>
+                                    <constraint firstItem="Vog-hQ-Dpc" firstAttribute="top" secondItem="c5d-bv-hy9" secondAttribute="top" constant="6" id="cOK-UI-K2v"/>
+                                    <constraint firstItem="V5v-F1-wRm" firstAttribute="centerY" secondItem="c5d-bv-hy9" secondAttribute="centerY" id="dkg-QQ-fYC"/>
+                                    <constraint firstItem="V5v-F1-wRm" firstAttribute="centerX" secondItem="c5d-bv-hy9" secondAttribute="centerX" id="y9A-nm-ax0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwY-d5-0y4">
+                                <rect key="frame" x="10" y="98" width="183" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Me: Greeting Message!">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MvE-L4-KR0">
+                                <rect key="frame" x="0.0" y="136" width="600" height="348"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wwY-d5-0y4" firstAttribute="top" secondItem="c5d-bv-hy9" secondAttribute="bottom" constant="14" id="3VT-7Z-saG"/>
+                            <constraint firstAttribute="trailing" secondItem="osx-S7-Tnu" secondAttribute="trailing" id="7eT-en-KV2"/>
+                            <constraint firstAttribute="trailing" secondItem="MvE-L4-KR0" secondAttribute="trailing" id="8ZQ-ii-ZYl"/>
+                            <constraint firstItem="osx-S7-Tnu" firstAttribute="leading" secondItem="fwR-AV-eFJ" secondAttribute="leading" id="RDq-Go-egP"/>
+                            <constraint firstItem="c5d-bv-hy9" firstAttribute="leading" secondItem="fwR-AV-eFJ" secondAttribute="leading" id="SXJ-Ar-AVd"/>
+                            <constraint firstItem="wwY-d5-0y4" firstAttribute="leading" secondItem="fwR-AV-eFJ" secondAttribute="leadingMargin" constant="-10" id="Ush-bh-GQN"/>
+                            <constraint firstItem="XFL-wq-0dN" firstAttribute="top" secondItem="MvE-L4-KR0" secondAttribute="bottom" constant="52" id="eg8-aR-4tr"/>
+                            <constraint firstItem="c5d-bv-hy9" firstAttribute="top" secondItem="osx-S7-Tnu" secondAttribute="bottom" id="mwu-V1-1iw"/>
+                            <constraint firstItem="c5d-bv-hy9" firstAttribute="top" secondItem="osx-S7-Tnu" secondAttribute="bottom" id="pTY-f3-mag"/>
+                            <constraint firstItem="osx-S7-Tnu" firstAttribute="top" secondItem="2a5-r8-f8d" secondAttribute="bottom" id="rlL-x2-IxJ"/>
+                            <constraint firstItem="c5d-bv-hy9" firstAttribute="top" secondItem="osx-S7-Tnu" secondAttribute="bottom" id="uOc-nD-izn"/>
+                            <constraint firstItem="MvE-L4-KR0" firstAttribute="top" secondItem="c5d-bv-hy9" secondAttribute="bottom" constant="52" id="vt6-Xn-hB4"/>
+                            <constraint firstItem="MvE-L4-KR0" firstAttribute="leading" secondItem="fwR-AV-eFJ" secondAttribute="leading" id="wMU-18-JzN"/>
+                            <constraint firstAttribute="trailing" secondItem="c5d-bv-hy9" secondAttribute="trailing" id="yXu-iL-Kif"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="bottomLayout" destination="eg8-aR-4tr" id="07p-ag-OZ6"/>
+                        <outlet property="textField" destination="MvE-L4-KR0" id="te7-XN-c3O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjR-tS-gad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="-494"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
