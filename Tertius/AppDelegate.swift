@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var currentLocation: CLLocation?
+    let overlayTransitionDelegate = OverlayTransitioningDelegate()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         GMSServices.provideAPIKey(googleMapsAPIKey)
@@ -90,6 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         NSLog("Notification: %@", userInfo)
 
+//        popReceiveTreazureAlert()
+        if let treazureId = userInfo["treazureId" as NSObject] as? String {
+            presentTreazure(treazureId);
+        }
     }
 
     // MARK: - Helper Methods
@@ -108,5 +113,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
+    //This function should be called when a new message is encountered.
+    func popReceiveTreazureAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showNotice("Received Message!", subTitle: "Look?", closeButtonTitle: "Open", duration: NSTimeInterval(0))
+        alert.alertIsDismissed {
+            
+            print("Switch to pop view controller")
+        }
+    }
+
+    func presentTreazure(treazureID: String) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TreazureDisplayScene")
+        vc.modalPresentationStyle = .Custom
+        vc.transitioningDelegate = overlayTransitionDelegate
+        window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
+    }
 }
 

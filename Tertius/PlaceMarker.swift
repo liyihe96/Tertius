@@ -23,11 +23,8 @@ class PlaceMarker: GMSMarker {
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(position) { response, error in
             if let address = response?.firstResult() {
-
-                // 3
                 let lines = address.lines as! [String]
                 self.address = lines.joinWithSeparator("\n")
-
             }
         }
         var color = UIColor.redColor()
@@ -39,7 +36,6 @@ class PlaceMarker: GMSMarker {
         }
         icon = UIColor.imageWithColor(color, size: CGSize(width: 10, height: 10))
 
-//        icon.layer.masksToBounds = true
         layer.masksToBounds = true
         layer.cornerRadius = 5
         groundAnchor = CGPoint(x: 0.5, y: 0.5)

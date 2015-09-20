@@ -19,6 +19,33 @@ class TreazureDisplayViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         doneButton.layer.cornerRadius = 5
+        doneButton.layer.masksToBounds = true
+    }
+
+
+    var treazure: Treazure? {
+        didSet {
+            if let treazure = treazure {
+                self.textField.text = treazure.messages.first!.text!
+            }
+        }
+    }
+
+    var treazureId: String? {
+        didSet {
+            if let treazureId = treazureId {
+                let query = Treazure.query()!
+                query.getObjectInBackgroundWithId(treazureId) { object, error in
+                    if let error = error {
+                        NSLog("Error :%@", error.localizedDescription)
+                        return
+                    } else {
+                        self.treazure = object as? Treazure
+                    }
+                }
+            }
+        }
     }
 }

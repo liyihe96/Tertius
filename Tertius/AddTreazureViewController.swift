@@ -64,5 +64,4 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
         let alert = SCLAlertView(newWindow: ())
         alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.0))
     }
-    
 }

@@ -248,7 +248,7 @@
         <!--Treazure Display View Controller-->
         <scene sceneID="APZ-r3-hBg">
             <objects>
-                <viewController id="eIp-RI-Efd" customClass="TreazureDisplayViewController" customModule="Tertius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TreazureDisplayScene" id="eIp-RI-Efd" customClass="TreazureDisplayViewController" customModule="Tertius" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2a5-r8-f8d"/>
                         <viewControllerLayoutGuide type="bottom" id="XFL-wq-0dN"/>

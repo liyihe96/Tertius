@@ -26,16 +26,6 @@ class MapViewController: UIViewController {
     func addTreazure() {
         performSegueWithIdentifier("PopAddTreazure", sender: nil)
     }
-    
-    //This function should be called when a new message is encountered.
-    func popReceiveTreazureAlert() {
-        let alert = SCLAlertView(newWindow: ())
-        alert.showNotice("Received Message!", subTitle: "Look?", closeButtonTitle: "Open", duration: NSTimeInterval(0))
-        alert.alertIsDismissed { () -> Void in
-            //Should switch to pop view controller.
-            print("Switch to pop view controller")
-        }
-    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PopAddTreazure" {
@@ -90,12 +80,13 @@ extension MapViewController: CLLocationManagerDelegate {
                 mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 20, bearing: 0, viewingAngle: 0)
                 ConstVar.firstShown = false
             }
-            NSLog("Current Location: %@", location)
             if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                 appDelegate.currentLocation = location
             }
             User.currentUser()!.currentLocation = PFGeoPoint(location: location)
             User.currentUser()!.saveInBackground()
+            manager.stopUpdatingLocation()
+            NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(2), target: manager, selector: "startUpdatingLocation", userInfo: nil, repeats: false)
         }
     }
 }
