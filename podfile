@@ -1,0 +1,7 @@
+pod 'Parse'
+pod 'libextobjc'
+pod 'DateTools'
+pod 'JGProgressHUD'
+pod 'INTULocationManager'
+
+use_frameworks!
