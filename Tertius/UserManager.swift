@@ -10,9 +10,22 @@ class UserManager {
     
     static let sharedInstance = UserManager()
     
-    func getMessagesForCurrentUser(block: ([Message]?, NSError?) -> Void) {
-        let query = Treazure.query()!
+    func getMessagesOwnedByCurrentUser(block: ([Message]?, NSError?) -> Void) {
+        let query = Message.query()!
         query.whereKey("user", equalTo: User.currentUser()!)
+        
+        query.findObjectsInBackgroundWithBlock { messages, error in
+            if let messages = messages as? [Message] {
+                block(messages, nil)
+            } else {
+                block(nil, error)
+            }
+        }
+    }
+    
+    func getMessagesFoundByCurrentUser(block: ([Message]?, NSError?) -> Void) {
+        let query = Treazure.query()!
+        query.whereKey("finder", equalTo: User.currentUser()!)
         
         query.findObjectsInBackgroundWithBlock { treazures, error in
             if let treazures = treazures {

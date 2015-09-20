@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in 0..<2 {
             let newTreazure = Treazure()
             newTreazure.user = User.currentUser()!
-            newTreazure.numMessagesFound = 0
             newTreazure.messages = [Message]()
             
             for j in 0..<3 {
                 let newMessage = Message()
+                newMessage.user = User.currentUser()!
                 newMessage.location = PFGeoPoint(latitude: Double(i), longitude: Double(j))
                 newMessage.text = "Hello, world"
                 
@@ -46,7 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("SUCCESS")
         
-        UserManager.sharedInstance.getMessagesForCurrentUser { messages, error in
+        UserManager.sharedInstance.getMessagesOwnedByCurrentUser { messages, error in
+            print(messages)
+        }
+        UserManager.sharedInstance.getMessagesFoundByCurrentUser { messages, error in
             print(messages)
         }
         */
