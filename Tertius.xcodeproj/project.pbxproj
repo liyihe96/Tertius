@@ -16,8 +16,12 @@
 		07994FA41BAE72F600DAAE3D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA11BAE72F600DAAE3D /* Message.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA21BAE72F600DAAE3D /* Treazure.swift */; settings = {ASSET_TAGS = (); }; };
 		07994FA61BAE72F600DAAE3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA31BAE72F600DAAE3D /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FAD1BAE859000DAAE3D /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAC1BAE859000DAAE3D /* PlaceMarker.swift */; settings = {ASSET_TAGS = (); }; };
+		07994FAF1BAE875800DAAE3D /* TreazurePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994FAE1BAE875800DAAE3D /* TreazurePlace.swift */; settings = {ASSET_TAGS = (); }; };
 		33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33061D241BAE7FBC00AC29ED /* UserManager.swift */; settings = {ASSET_TAGS = (); }; };
-		39D6DEAD3442F46CED837DAA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45EC566840D134128942D8 /* libPods.a */; };
+		A5ECDF349F7E65AFFE02CEA2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7084F78E0BC856F65E567763 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +38,14 @@
 		07994FA11BAE72F600DAAE3D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		07994FA21BAE72F600DAAE3D /* Treazure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treazure.swift; sourceTree = "<group>"; };
 		07994FA31BAE72F600DAAE3D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTreazureViewController.swift; sourceTree = "<group>"; };
+		07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		07994FAC1BAE859000DAAE3D /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		07994FAE1BAE875800DAAE3D /* TreazurePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreazurePlace.swift; sourceTree = "<group>"; };
+		0FEAD8A371785F4F7D9CCC6F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		33061D241BAE7FBC00AC29ED /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		6957073194592EEC6E94D6EA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		7A45EC566840D134128942D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		454247F78073101D9F88CD47 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7084F78E0BC856F65E567763 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D6DEAD3442F46CED837DAA /* libPods.a in Frameworks */,
+				A5ECDF349F7E65AFFE02CEA2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,21 +68,13 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		064CA4A2F883B3BEA10006C5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7A45EC566840D134128942D8 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		07994F7C1BAE5B8C00DAAE3D = {
 			isa = PBXGroup;
 			children = (
 				07994F871BAE5B8C00DAAE3D /* Tertius */,
 				07994F861BAE5B8C00DAAE3D /* Products */,
-				B819E4BF7BB5E2E5AB905BAA /* Pods */,
-				064CA4A2F883B3BEA10006C5 /* Frameworks */,
+				B732A55C043F00DECDBCA402 /* Pods */,
+				C0DAE4E48E290198E316371D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +89,7 @@
 		07994F871BAE5B8C00DAAE3D /* Tertius */ = {
 			isa = PBXGroup;
 			children = (
+				07994FA91BAE7D7B00DAAE3D /* AddTreazure */,
 				07994FA01BAE72F000DAAE3D /* Models */,
 				07994F9E1BAE638300DAAE3D /* Map */,
 				0475540A1BAE5EA400325AF5 /* Login */,
@@ -115,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				07994F9B1BAE635700DAAE3D /* MapViewController.swift */,
+				07994FAC1BAE859000DAAE3D /* PlaceMarker.swift */,
+				07994FAE1BAE875800DAAE3D /* TreazurePlace.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -130,13 +133,30 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		B819E4BF7BB5E2E5AB905BAA /* Pods */ = {
+		07994FA91BAE7D7B00DAAE3D /* AddTreazure */ = {
 			isa = PBXGroup;
 			children = (
-				77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */,
-				6957073194592EEC6E94D6EA /* Pods.release.xcconfig */,
+				07994FA71BAE7CE600DAAE3D /* AddTreazureViewController.swift */,
+				07994FAA1BAE80E300DAAE3D /* CustomPresentAnimationController.swift */,
+			);
+			name = AddTreazure;
+			sourceTree = "<group>";
+		};
+		B732A55C043F00DECDBCA402 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				454247F78073101D9F88CD47 /* Pods.debug.xcconfig */,
+				0FEAD8A371785F4F7D9CCC6F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0DAE4E48E290198E316371D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7084F78E0BC856F65E567763 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,11 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07994F971BAE5B8C00DAAE3D /* Build configuration list for PBXNativeTarget "Tertius" */;
 			buildPhases = (
-				E7472664FCA47C9CD41544BD /* Check Pods Manifest.lock */,
+				8DCF10C15C99B8C0F85930C0 /* Check Pods Manifest.lock */,
 				07994F811BAE5B8C00DAAE3D /* Sources */,
 				07994F821BAE5B8C00DAAE3D /* Frameworks */,
 				07994F831BAE5B8C00DAAE3D /* Resources */,
-				28AE34E2204E39DCA89119EE /* Copy Pods Resources */,
+				866FA5707CF266036CD2298E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,7 +228,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28AE34E2204E39DCA89119EE /* Copy Pods Resources */ = {
+		866FA5707CF266036CD2298E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,7 +243,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7472664FCA47C9CD41544BD /* Check Pods Manifest.lock */ = {
+		8DCF10C15C99B8C0F85930C0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,9 +266,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */,
+				07994FAF1BAE875800DAAE3D /* TreazurePlace.swift in Sources */,
+				07994FAB1BAE80E300DAAE3D /* CustomPresentAnimationController.swift in Sources */,
 				07994FA41BAE72F600DAAE3D /* Message.swift in Sources */,
 				33061D251BAE7FBC00AC29ED /* UserManager.swift in Sources */,
 				07994FA61BAE72F600DAAE3D /* User.swift in Sources */,
+				07994FAD1BAE859000DAAE3D /* PlaceMarker.swift in Sources */,
+				07994FA81BAE7CE600DAAE3D /* AddTreazureViewController.swift in Sources */,
 				07994FA51BAE72F600DAAE3D /* Treazure.swift in Sources */,
 				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
@@ -362,7 +386,7 @@
 		};
 		07994F981BAE5B8C00DAAE3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77B53E6A070D85EA36D89DAB /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 454247F78073101D9F88CD47 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -380,7 +404,7 @@
 		};
 		07994F991BAE5B8C00DAAE3D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6957073194592EEC6E94D6EA /* Pods.release.xcconfig */;
+			baseConfigurationReference = 0FEAD8A371785F4F7D9CCC6F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

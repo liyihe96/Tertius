@@ -76,6 +76,24 @@
             </objects>
             <point key="canvasLocation" x="194" y="-494"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Wjq-b9-G0K">
+            <objects>
+                <viewController id="g9F-Z0-2GA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WGw-rb-jhp"/>
+                        <viewControllerLayoutGuide type="bottom" id="7eN-Pz-Blc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ZT-nj-UXy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5f-fh-X1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="-494"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -104,6 +122,7 @@
                     <navigationItem key="navigationItem" id="Apd-TJ-zqq"/>
                     <connections>
                         <outlet property="mapView" destination="JDj-1T-OfU" id="3Ju-eX-QHa"/>
+                        <segue destination="g9F-Z0-2GA" kind="presentation" identifier="PopAddTreazure" id="bwA-n9-EBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
