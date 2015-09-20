@@ -22,7 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(googleMapsAPIKey)
         Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
         switchRootViewController()
+
+
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
         return true
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print("application:didRegisterForRemoteNotificationsWithDeviceToken:")
+
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
     }
 
     func applicationWillResignActive(application: UIApplication) {
