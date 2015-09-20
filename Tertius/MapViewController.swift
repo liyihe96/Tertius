@@ -26,6 +26,16 @@ class MapViewController: UIViewController {
     func addTreazure() {
         performSegueWithIdentifier("PopAddTreazure", sender: nil)
     }
+    
+    //This function should be called when a new message is encountered.
+    func popReceiveTreazureAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showNotice("Received Message!", subTitle: "Look?", closeButtonTitle: "Open", duration: NSTimeInterval(0))
+        alert.alertIsDismissed { () -> Void in
+            //Should switch to pop view controller.
+            print("Switch to pop view controller")
+        }
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PopAddTreazure" {

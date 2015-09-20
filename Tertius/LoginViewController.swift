@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet var topTitleLayout: NSLayoutConstraint!
 
+    @IBOutlet var loginButton: UIButton!
     @IBAction func signUpTouched(sender: UIButton) {
         signUp(usernameTextField.text!, password: passwordTextField.text!)
     }
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 20
         handleKeyboard()
     }
 

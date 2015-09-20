@@ -10,6 +10,7 @@ import UIKit
 
 class AddTreazureViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet var doneButton: UIButton!
     @IBOutlet var textView: UITextView!
     
     func textViewDidBeginEditing(textView: UITextView) {
@@ -28,6 +29,11 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         textView.delegate = self
+        
+        self.view.layer.cornerRadius = 5
+        self.view.layer.masksToBounds = true
+        doneButton.layer.cornerRadius = 10
+        
         super.viewDidLoad()
         textView.becomeFirstResponder()
     }
