@@ -22,6 +22,14 @@ class LoginViewController: UIViewController {
         logIn(usernameTextField.text!, password: passwordTextField.text!)
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     func signUp(username: String, password: String){
         let user = PFUser()
         user.username = username
@@ -47,5 +55,27 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+
+    func handleKeyboard() {
+        addTapGestureRecognizer()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard:", name: "UIKeyboardWillShowNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboard", name: "UIKeyboardWillHideNotification", object: nil)
+    }
+
+    func handleKeyboard(note: NSNotification) {
+//        let timeInterval = note.userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
+//        let curve = note.userInfo[UIKeyboardAnimationCurveUserInfoKey]?.integerValue
+
+    }
+    
+    func addTapGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapReceived:")
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func tapReceived(sender: UITapGestureRecognizer) {
+        passwordTextField.endEditing(true)
+        usernameTextField.endEditing(true)
     }
 }
