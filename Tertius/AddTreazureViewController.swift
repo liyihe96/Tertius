@@ -10,6 +10,7 @@ import UIKit
 
 class AddTreazureViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet var doneButton: UIButton!
     @IBOutlet var textView: UITextView!
     
     func textViewDidBeginEditing(textView: UITextView) {
@@ -27,8 +28,14 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewDidLoad() {
-        textView.delegate = self
         super.viewDidLoad()
+
+        textView.delegate = self
+        
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
+        doneButton.layer.cornerRadius = 10
+        doneButton.layer.masksToBounds = true
         textView.becomeFirstResponder()
     }
     
@@ -39,7 +46,23 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func donePressed(sender: UIButton) {
         textView.endEditing(true)
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            UserManager.sharedInstance.createNewTreazure([(textView.text, appDelegate.currentLocation!)]) { (success: Bool, error: NSError?) -> Void in
+                if let error = error{
+                    NSLog("Error : %@", error)
+                    return
+                }
+                else {
+                    self.addMessageDoneAlert()
+                }
+            }
+        }
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func addMessageDoneAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.0))
     }
     
 }

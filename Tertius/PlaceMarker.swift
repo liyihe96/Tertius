@@ -15,11 +15,21 @@ enum PlaceType{
 
 class PlaceMarker: GMSMarker {
     let message: Message
-
+    var address: String = ""
     init(message: Message, placeType: PlaceType) {
         self.message = message
         super.init()
         position = CLLocationCoordinate2D(latitude: message.location.latitude, longitude: message.location.longitude)
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(position) { response, error in
+            if let address = response?.firstResult() {
+
+                // 3
+                let lines = address.lines as! [String]
+                self.address = lines.joinWithSeparator("\n")
+
+            }
+        }
         var color = UIColor.redColor()
         switch placeType {
         case .LeftAt:
