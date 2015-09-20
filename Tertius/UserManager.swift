@@ -42,4 +42,29 @@ class UserManager {
             }
         }
     }
+    
+    func createNewTreazure(messages: [(String?, CLLocation)], block: (Bool, NSError?) -> Void) {
+        if messages.isEmpty {
+            block(false, nil)
+        } else if let user = User.currentUser() {
+            var newMessages = [Message]()
+            
+            for (text, location) in messages {
+                let newMessage = Message()
+                newMessage.user = user
+                newMessage.text = text
+                newMessage.location = PFGeoPoint(location: location)
+                
+                newMessages.append(newMessage)
+            }
+            
+            let newTreazure = Treazure()
+            newTreazure.user = user
+            newTreazure.messages = newMessages
+            
+            newTreazure.saveInBackgroundWithBlock(block)
+        } else {
+            block(false, nil)
+        }
+    }
 }
