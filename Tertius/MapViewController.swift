@@ -32,7 +32,7 @@ extension MapViewController: CLLocationManagerDelegate {
         if let location = locations.first as CLLocation? {
 
             // 7
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 20, bearing: 0, viewingAngle: 0)
 
             // 8
             locationManager.stopUpdatingLocation()
