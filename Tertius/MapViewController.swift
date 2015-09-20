@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Treazure"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTreazure")
+        locationManager.distanceFilter = 1;
         locationManager.delegate = self;
         locationManager.requestAlwaysAuthorization()
         mapView.delegate = self
