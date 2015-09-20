@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047554061BAE5E1400325AF5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047554051BAE5E1400325AF5 /* LoginView.swift */; };
+		047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047554051BAE5E1400325AF5 /* LoginViewController.swift */; };
 		07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */; };
 		07994F8E1BAE5B8C00DAAE3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8C1BAE5B8C00DAAE3D /* Main.storyboard */; };
 		07994F901BAE5B8C00DAAE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		047554051BAE5E1400325AF5 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tertius-Bridging-Header.h"; sourceTree = "<group>"; };
+		047554051BAE5E1400325AF5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tertius-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		07994F851BAE5B8C00DAAE3D /* Tertius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tertius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07994F8D1BAE5B8C00DAAE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +26,7 @@
 		07994F921BAE5B8C00DAAE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07994F941BAE5B8C00DAAE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07994F9B1BAE635700DAAE3D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		07994F9F1BAE6FBA00DAAE3D /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		E1726FF6D0D374691809F45F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360C73975865242B301595D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +47,7 @@
 		0475540A1BAE5EA400325AF5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				047554051BAE5E1400325AF5 /* LoginView.swift */,
+				047554051BAE5E1400325AF5 /* LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -87,6 +88,8 @@
 				07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */,
 				07994F911BAE5B8C00DAAE3D /* LaunchScreen.storyboard */,
 				07994F941BAE5B8C00DAAE3D /* Info.plist */,
+				047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */,
+				07994F9F1BAE6FBA00DAAE3D /* Macro.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -102,7 +105,6 @@
 		A908B7A32821D18AE90E256E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */,
 				E1726FF6D0D374691809F45F /* libPods.a */,
 			);
 			name = Frameworks;
@@ -222,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047554061BAE5E1400325AF5 /* LoginView.swift in Sources */,
+				047554061BAE5E1400325AF5 /* LoginViewController.swift in Sources */,
 				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
 			);

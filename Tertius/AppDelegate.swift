@@ -7,16 +7,21 @@
 //
 
 import UIKit
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let mainSceneIdentifier = "MainScene"
+    let loginSceneIdentifier = "LoginScene"
+    let PARSE_APPLICATION_ID = "YSspB22NSOECDDG8uzk3wKh63F1HGbgtfH24mVM0"
+    let PARSE_CLIENT_KEY = "kQ6uECV065qQS1N2F4kyLIJfTHbQQGn8GzOy1ZS4";
     var window: UIWindow?
 
     let googleMapsAPIKey = "AIzaSyA9SCjeLQNVL6Vals-L7qhKQNYVRX8pri4"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         GMSServices.provideAPIKey(googleMapsAPIKey)
+        Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
+        switchRootViewController()
         return true
     }
 
@@ -42,6 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Helper Methods
+    func switchRootViewController() {
+        if let _ = PFUser.currentUser() {
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(mainSceneIdentifier)
+        } else {
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(loginSceneIdentifier)
+        }
+    }
 
 }
 
