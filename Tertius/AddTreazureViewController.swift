@@ -32,10 +32,12 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func closePressed(sender: UIButton) {
         textView.endEditing(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func donePressed(sender: UIButton) {
         textView.endEditing(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
