@@ -12,7 +12,8 @@
 		07994F8E1BAE5B8C00DAAE3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8C1BAE5B8C00DAAE3D /* Main.storyboard */; };
 		07994F901BAE5B8C00DAAE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */; };
 		07994F931BAE5B8C00DAAE3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07994F911BAE5B8C00DAAE3D /* LaunchScreen.storyboard */; };
-		32B585BCA356541517AEED19 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E521633BE50294341895578F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F9B1BAE635700DAAE3D /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CE2641762C658FF9A0B83061 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1726FF6D0D374691809F45F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07994F921BAE5B8C00DAAE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07994F941BAE5B8C00DAAE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07994F9B1BAE635700DAAE3D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E1726FF6D0D374691809F45F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360C73975865242B301595D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E521633BE50294341895578F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B585BCA356541517AEED19 /* Pods.framework in Frameworks */,
+				CE2641762C658FF9A0B83061 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,20 +72,38 @@
 		07994F871BAE5B8C00DAAE3D /* Tertius */ = {
 			isa = PBXGroup;
 			children = (
+				07994F9E1BAE638300DAAE3D /* Map */,
 				0475540A1BAE5EA400325AF5 /* Login */,
-				07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */,
 				07994F8C1BAE5B8C00DAAE3D /* Main.storyboard */,
+				07994F9D1BAE636700DAAE3D /* Supporting Files */,
+			);
+			path = Tertius;
+			sourceTree = "<group>";
+		};
+		07994F9D1BAE636700DAAE3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07994F881BAE5B8C00DAAE3D /* AppDelegate.swift */,
 				07994F8F1BAE5B8C00DAAE3D /* Assets.xcassets */,
 				07994F911BAE5B8C00DAAE3D /* LaunchScreen.storyboard */,
 				07994F941BAE5B8C00DAAE3D /* Info.plist */,
 			);
-			path = Tertius;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07994F9E1BAE638300DAAE3D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				07994F9B1BAE635700DAAE3D /* MapViewController.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		A908B7A32821D18AE90E256E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E521633BE50294341895578F /* Pods.framework */,
+				047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */,
+				E1726FF6D0D374691809F45F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,7 +113,6 @@
 			children = (
 				E360C73975865242B301595D /* Pods.debug.xcconfig */,
 				F31C113BB50839395BA6DA11 /* Pods.release.xcconfig */,
-				047554071BAE5E6300325AF5 /* Tertius-Bridging-Header.h */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -109,7 +128,6 @@
 				07994F811BAE5B8C00DAAE3D /* Sources */,
 				07994F821BAE5B8C00DAAE3D /* Frameworks */,
 				07994F831BAE5B8C00DAAE3D /* Resources */,
-				E46B954D930B2D0456194517 /* Embed Pods Frameworks */,
 				02194565CA673DBD3B050516 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -197,21 +215,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E46B954D930B2D0456194517 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047554061BAE5E1400325AF5 /* LoginView.swift in Sources */,
+				07994F9C1BAE635700DAAE3D /* MapViewController.swift in Sources */,
 				07994F891BAE5B8C00DAAE3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tertius/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,6 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tertius/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
 				PRODUCT_NAME = "$(TARGET_NAME)";

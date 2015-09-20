@@ -28,6 +28,7 @@ class LoginView: UIViewController {
         }
     }
     
+    
     func signup(username: String, password: String, email: String) {
         var user = PFUser()
         user.username = username
@@ -41,9 +42,5 @@ class LoginView: UIViewController {
             }
         }
     }
-    
-    
-    
-    
     
 }

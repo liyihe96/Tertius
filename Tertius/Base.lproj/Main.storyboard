@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Login View-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginView" customModule="Tertius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Tertius" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDj-1T-OfU" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JDj-1T-OfU" secondAttribute="trailing" id="TNG-An-P6t"/>
+                            <constraint firstItem="JDj-1T-OfU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hgf-Me-OW7"/>
+                            <constraint firstItem="JDj-1T-OfU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lhc-cz-2Rg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JDj-1T-OfU" secondAttribute="bottom" id="shg-Ca-dXI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="JDj-1T-OfU" id="3Ju-eX-QHa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
