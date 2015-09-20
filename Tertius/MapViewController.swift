@@ -65,9 +65,8 @@ extension MapViewController: CLLocationManagerDelegate {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 20, bearing: 0, viewingAngle: 0)
 
             NSLog("Current Location: %@", location)
-            PFUser.currentUser()!["currentLocation"] = PFGeoPoint(location: location)
-            PFUser.currentUser()!.saveInBackground()
-//            locationManager.stopUpdatingLocation()
+            User.currentUser()!.currentLocation = PFGeoPoint(location: location)
+            User.currentUser()!.saveInBackground()
         }
     }
 }

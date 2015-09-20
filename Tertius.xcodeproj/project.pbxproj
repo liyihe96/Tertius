@@ -397,7 +397,7 @@
 				INFOPLIST_FILE = Tertius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
+				PRODUCT_BUNDLE_IDENTIFIER = io.treazure.Treazure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tertius-Bridging-Header.h";
@@ -417,7 +417,7 @@
 				INFOPLIST_FILE = Tertius/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.ryanli.Tertius;
+				PRODUCT_BUNDLE_IDENTIFIER = io.treazure.Treazure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tertius-Bridging-Header.h";

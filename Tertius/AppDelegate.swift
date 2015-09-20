@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginSceneIdentifier = "LoginScene"
     let PARSE_APPLICATION_ID = "YSspB22NSOECDDG8uzk3wKh63F1HGbgtfH24mVM0"
     let PARSE_CLIENT_KEY = "kQ6uECV065qQS1N2F4kyLIJfTHbQQGn8GzOy1ZS4"
-    let googleMapsAPIKey = "AIzaSyA9SCjeLQNVL6Vals-L7qhKQNYVRX8pri4"
-    
+    let googleMapsAPIKey = "AIzaSyAikSfMwcAw224bQBObH73wZ-a9nXnbZD0"
+
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -23,37 +23,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
         switchRootViewController()
 
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
-
         /*
         for i in 0..<2 {
-            let newTreazure = Treazure()
-            newTreazure.user = User.currentUser()!
-            newTreazure.messages = [Message]()
-            
-            for j in 0..<3 {
-                let newMessage = Message()
-                newMessage.user = User.currentUser()!
-                newMessage.location = PFGeoPoint(latitude: Double(i), longitude: Double(j))
-                newMessage.text = "Hello, world"
-                
-                newTreazure.messages.append(newMessage)
-            }
-            
-            try! newTreazure.save()
+        let newTreazure = Treazure()
+        newTreazure.user = User.currentUser()!
+        newTreazure.messages = [Message]()
+
+        for j in 0..<3 {
+        let newMessage = Message()
+        newMessage.user = User.currentUser()!
+        newMessage.location = PFGeoPoint(latitude: Double(i), longitude: Double(j))
+        newMessage.text = "Hello, world"
+
+        newTreazure.messages.append(newMessage)
+        }
+
+        try! newTreazure.save()
         }
         print("SUCCESS")
-        
+
         UserManager.sharedInstance.getMessagesOwnedByCurrentUser { messages, error in
-            print(messages)
+        print(messages)
         }
         UserManager.sharedInstance.getMessagesFoundByCurrentUser { messages, error in
-            print(messages)
+        print(messages)
         }
         */
-        
+
         return true
     }
 
@@ -62,6 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
+        if let user = User.currentUser() {
+            installation["user"] = user
+        }
         installation.saveInBackground()
     }
 
@@ -87,6 +86,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NSLog("Notification: %@", userInfo)
+
+    }
+
     // MARK: - Helper Methods
     func switchRootViewController() {
         if let _ = PFUser.currentUser() {
@@ -94,6 +98,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(loginSceneIdentifier)
         }
+    }
+
+    func registerNotification() {
+
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
 }
