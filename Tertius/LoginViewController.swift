@@ -98,4 +98,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    func showUsernameFailureAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showError("Wrong username", subTitle: "Please check the username you typed in", closeButtonTitle: "Dismiss", duration: NSTimeInterval(0.0))
+    }
+    
+    func showPasswordFailureAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showError("Wrong password", subTitle: "Please check the password you typed in", closeButtonTitle: "Dismiss", duration: NSTimeInterval(0.0))
+    }
 }

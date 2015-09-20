@@ -41,6 +41,7 @@ PODS:
   - libextobjc/UmbrellaHeader (0.4.1)
   - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
+  - SCLAlertView-Objective-C (0.7.7)
 
 DEPENDENCIES:
   - DateTools
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - libextobjc
   - Parse
+  - SCLAlertView-Objective-C
 
 SPEC CHECKSUMS:
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
@@ -58,5 +60,6 @@ SPEC CHECKSUMS:
   JGProgressHUD: a58f62d3afac173d201250c3ba628fe44bd67017
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
+  SCLAlertView-Objective-C: 062808b4664add2d38d44b7867267985a02267ad
 
 COCOAPODS: 0.38.2
