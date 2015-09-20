@@ -18,23 +18,4 @@ class User: PFUser {
             self.registerSubclass()
         }
     }
-    
-    func getMessagesInBackgroundWithBlock(block: ([Message]?, NSError?) -> Void) {
-        /*
-        let query = Treazure.query()!
-        query.whereKey("user", equalTo: self)
-        query.findObjectsInBackgroundWithBlock { treazures, error in
-            if let treazures = treazures {
-                var messages = [Message]()
-                
-                for treazure in treazures {
-                    print(treazure)
-                    //messages.appendContentsOf(treazure["messages"] as! [Message])
-                }
-            } else {
-                block(nil, error)
-            }
-        }
-        */
-    }
 }

@@ -27,9 +27,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
         
+        /*
+        for i in 0..<2 {
+            let newTreazure = Treazure()
+            newTreazure.user = User.currentUser()!
+            newTreazure.numMessagesFound = 0
+            newTreazure.messages = [Message]()
+            
+            for j in 0..<3 {
+                let newMessage = Message()
+                newMessage.location = PFGeoPoint(latitude: Double(i), longitude: Double(j))
+                newMessage.text = "Hello, world"
+                
+                newTreazure.messages.append(newMessage)
+            }
+            
+            try! newTreazure.save()
+        }
+        print("SUCCESS")
+        
         UserManager.sharedInstance.getMessagesForCurrentUser { messages, error in
             print(messages)
         }
+        */
         
         return true
     }
