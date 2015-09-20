@@ -39,7 +39,13 @@ class AddTreazureViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func donePressed(sender: UIButton) {
         textView.endEditing(true)
+        addMessageDoneAlert()
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addMessageDoneAlert() {
+        let alert = SCLAlertView(newWindow: ())
+        alert.showSuccess("Done!", subTitle: "Your message has been deployed.", closeButtonTitle: "Get it", duration: NSTimeInterval(0.0))
     }
     
 }
