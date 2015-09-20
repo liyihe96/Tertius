@@ -8,7 +8,6 @@
 
 class Message: PFObject, PFSubclassing {
     
-    @NSManaged var treazure: Treazure
     @NSManaged var audio: PFFile?
     @NSManaged var text: String
     @NSManaged var location: PFGeoPoint

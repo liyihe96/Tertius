@@ -9,15 +9,14 @@
 import Foundation
 
 class PlaceMarker: GMSMarker {
-    let place: GooglePlace
+    let place: TreazurePlace
 
-    init(place: GooglePlace) {
+    init(place: TreazurePlace) {
         self.place = place
         super.init()
-
-        position = place.coordinate
-        icon = UIImage(named: place.placeType+"_pin")
-        groundAnchor = CGPoint(x: 0.5, y: 1)
-        appearAnimation = kGMSMarkerAnimationPop
+//
+//        position = place.coordinate
+//        groundAnchor = CGPoint(x: 0.5, y: 1)
+//        appearAnimation = kGMSMarkerAnimationPop
     }
 }
